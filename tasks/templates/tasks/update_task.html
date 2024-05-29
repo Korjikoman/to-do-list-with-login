@@ -2,7 +2,18 @@
 <h3>Edit Task</h3>
 
 <form method="POST" action="">
-  {% csrf_token %} {{form}}
-  <input type="submit" name="Update Task" value="Применить изменения" />
+  {% csrf_token %}
+  <input
+    type="text"
+    name="title"
+    required
+    class="todo-input inp"
+    placeholder="What is the task today?"
+    value="{{obj.title}}"
+  />
+  Завершено:
+  <input type="checkbox" name="complete" />
+
+  <input class="submit-button" type="submit" value="Update Task" />
 </form>
 {% endblock %}

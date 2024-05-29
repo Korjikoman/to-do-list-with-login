@@ -85,16 +85,17 @@ def index(request):
 @login_required(login_url='/loginn')
 def updateTask(request, pk):
     task = Task.objects.get(id = pk)
-    
-    form = TaskForm(instance=task)
-    
     if request.method == "POST":
-        form = TaskForm(request.POST, instance=task)
-        if form.is_valid():
-            form.save()
-            return redirect('/index')
-    context = {'form' : form}
-    return render(request, 'tasks/update_task.html', context)
+        title = request.POST.get('title')
+        print(title)
+        obj = Task.objects.get(id=pk)
+        obj.title = title
+        completed = bool(request.POST.get('complete'))
+        obj.complete = completed
+        obj.save()
+        return redirect('/index')
+    obj = Task.objects.get(id=pk)
+    return render(request, 'tasks/update_task.html', {"obj" : obj})
 
 def deleteTask(request, pk):
     item = Task.objects.get(id=pk)
