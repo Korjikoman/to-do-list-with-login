@@ -12,7 +12,7 @@ def index(request):
         if form.is_valid():
             form.save()
         return redirect('/')
-    context = {"tasks": tasks, 'form': form}
+    context = {'tasks': tasks, 'form': form}
     return render(request, 'tasks/list.html', context)
 
 
@@ -35,3 +35,9 @@ def deleteTask(request, pk):
         item.delete()
         return redirect('/')
     return render(request, 'tasks/delete.html', {'item': item})
+
+def set_task_to_done(request, pk):
+    task = Task.objects.get(id=pk)
+    task.complete = True
+    task.save()
+    return redirect('/')

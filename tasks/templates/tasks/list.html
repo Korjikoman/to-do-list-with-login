@@ -15,15 +15,16 @@
   <a class="update_task btn-danger" href="{% url 'delete' task.id %}"
     >Удалить</a
   >
+  <a class="update_task" href="{% url 'set_task_to_done' task.id %}"
+    >Сделано!</a
+  >
   {% if task.complete == True%}
-  <strike
-    ><a class="update_task" href="{% url 'update_task' task.id %}"
-      ><h3>{{task}}</h3></a
-    ></strike
+  <a class="task_settings done" href="{% url 'update_task' task.id %}"
+    ><h3><strike>{{task}}</strike></h3></a
   >
   {% else %}
   <span
-    ><a class="update_task" href="{% url 'update_task' task.id %}"
+    ><a class="task_settings" href="{% url 'update_task' task.id %}"
       ><h3>{{task}}</h3></a
     ></span
   >

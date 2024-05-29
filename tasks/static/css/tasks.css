@@ -1,5 +1,5 @@
 body {
-    background-color: #178a60;
+    background-color: #C0C3C8;
 }
 
 h1,
@@ -19,20 +19,21 @@ h1 {
     margin-top: 0;
     margin-bottom: 40px;
     padding: 20px 20px 20px 40px;
+    text-align: center;
 }
 
 .page-header h1,
 .page-header h1 a,
 .page-header h1 a:visited,
 .page-header h1 a:active {
-    color: #931621;
+    color: #5568F1;
     font-size: 100px;
     text-decoration: none;
 }
 
 .update_task {
     display: inline-block;
-    color: #444;
+    color: #040F0F;
     border: 1px solid #CCC;
     background: #DDD;
     box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
@@ -44,13 +45,28 @@ h1 {
     text-decoration: none;
 }
 
+.task_settings {
+    display: inline-block;
+    color: #040F0F;
+    cursor: pointer;
+    vertical-align: middle;
+    max-width: 500px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.done {
+    color: #E4E4E4;
+}
+
 .date {
     float: right;
-    color: #484343;
+    color: #040F0F;
 }
 
 .update_task:active {
-    color: red;
+    color: #78C3FB;
     box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
 }
 
@@ -62,7 +78,7 @@ input {
 }
 
 input::placeholder {
-    color: #d3d3d3;
+    color: #C0C3C8;
 }
 
 .submit {
@@ -74,13 +90,14 @@ input::placeholder {
     width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #F8F8F8;
     border-radius: 3px;
     box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
 }
 
+/* #DBEBC0 */
 .item-row {
-    background-color: #906abd;
+    background-color: #5568F1;
     margin: 10px;
     padding: 20px;
     border-radius: 3px;
@@ -89,7 +106,8 @@ input::placeholder {
     box-shadow: 0px -1px 10px -4px rgba(0, 0, 0, 0.75);
 }
 
+
 .btn-danger {
-    background-color: #ffae19;
-    border-color: #e59400;
+    background-color: #EE778A;
+    border-color: #EE778A;
 }
