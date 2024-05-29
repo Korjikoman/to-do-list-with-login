@@ -1,7 +1,14 @@
 {% extends 'tasks/based.html' %} {% block content%}
 <h3>Задания на сегодня</h3>
-<form method="POST" action="/">
-  {% csrf_token %} {{form.title}}
+<form method="POST">
+  {% csrf_token %}
+  <input
+    type="text"
+    name="title"
+    class="add_new_task_input"
+    required
+    placeholder="Добавьте задание"
+  />
   <input
     class="btn btn-info"
     type="submit"
