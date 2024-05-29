@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="signup-box">
+      <h1>Регистрация</h1>
+      <form method="POST">
+        {% csrf_token %}
+        <label>Ваше Имя</label>
+        <input type="text" name="fnm" placeholder="Введите имя" />
+        <label>Email</label>
+        <input type="email" name="emailid" placeholder="Ваш email" />
+        <label>Придумайте пароль</label>
+        <input
+          type="password"
+          name="pwd"
+          required
+          placeholder="Ваш пароль..."
+        />
+
+        <input class="submit-button" type="submit" value="Зарегестрироваться" />
+      </form>
+    </div>
+    <p class="para-2">
+      Уже зарегестрированы?
+      <a class="anc" href="{% url 'loginn' %}">Login</a>
+    </p>
+  </body>
+</html>
