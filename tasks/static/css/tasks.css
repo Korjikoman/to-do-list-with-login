@@ -1,0 +1,95 @@
+body {
+    background-color: #178a60;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Poetsen One', cursive;
+}
+
+h1 {
+    padding: 0.5rem;
+    margin: 25px;
+}
+
+.page-header {
+
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1,
+.page-header h1 a,
+.page-header h1 a:visited,
+.page-header h1 a:active {
+    color: #931621;
+    font-size: 100px;
+    text-decoration: none;
+}
+
+.update_task {
+    display: inline-block;
+    color: #444;
+    border: 1px solid #CCC;
+    background: #DDD;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    vertical-align: middle;
+    max-width: 500px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.date {
+    float: right;
+    color: #484343;
+}
+
+.update_task:active {
+    color: red;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #d3d3d3;
+}
+
+.submit {
+    background-color: #6BA3E8;
+}
+
+/* done */
+.center-column {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
+}
+
+.item-row {
+    background-color: #906abd;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    box-shadow: 0px -1px 10px -4px rgba(0, 0, 0, 0.75);
+}
+
+.btn-danger {
+    background-color: #ffae19;
+    border-color: #e59400;
+}

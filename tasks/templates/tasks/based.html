@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>TO DO List webapp</title>
+    <link rel="stylesheet" href="{% static 'css/tasks.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <h1><a href="/">to-do list</a></h1>
+      </div>
+    </header>
+    <main class="container">
+      <div class="center-column">
+        <div class="row">{%block content%} {%endblock%}</div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>

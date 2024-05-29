@@ -1,0 +1,9 @@
+{% extends 'tasks/based.html' %} {% block content%}
+<h2>Вы уверены что хотите удалить "{{item}}" ?</h2>
+
+<a class="update_task" href="{% url 'list' %}"> Отмена </a>
+<form method="POST" action="">
+  {% csrf_token %}
+  <input type="submit" name="Confirm" value="Удалить!" />
+</form>
+{% endblock %}

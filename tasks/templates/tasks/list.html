@@ -1,50 +1,35 @@
-{% comment %} {% load static %}
-<!DOCTYPE html>
-
-<html>
-  <head>
-    <title>TO DO List webapp</title>
-  </head>
-  <body>
-    <div class="center-column">
-      <form method="POST" action="/">
-        {% csrf_token %} {{form.title}}
-        <input class="btn btn-info" type="submit" name="Create Task" />
-      </form>
-
-      <div class="todo-list">
-        {% for task in tasks %}
-        <div class="item-row">
-          <a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}"
-            >Update</a
-          >
-          <a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}"
-            >Delete</a
-          >
-
-          {% if task.complete == True %}
-          <strike>{{task}}</strike>
-          {% else %}
-          <span>{{task}}</span>
-          {% endif %}
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </body>
-</html>
-{% endcomment %}
-
-<h3>To do</h3>
+{% extends 'tasks/based.html' %} {% block content%}
+<h3>Задания на сегодня</h3>
 <form method="POST" action="/">
   {% csrf_token %} {{form.title}}
-  <input type="submit" name="Create Task" />
+  <input
+    class="btn btn-info"
+    type="submit"
+    name="Create Task"
+    value="Добавить"
+  />
 </form>
 
 {%for task in tasks%}
-<div>
-  <a href="{% url 'update_task' task.id %}">Edit Task</a>
-  <p>{{task}}</p>
+<div class="item-row">
+  <a class="update_task btn-danger" href="{% url 'delete' task.id %}"
+    >Удалить</a
+  >
+  {% if task.complete == True%}
+  <strike
+    ><a class="update_task" href="{% url 'update_task' task.id %}"
+      ><h3>{{task}}</h3></a
+    ></strike
+  >
+  {% else %}
+  <span
+    ><a class="update_task" href="{% url 'update_task' task.id %}"
+      ><h3>{{task}}</h3></a
+    ></span
+  >
+  {% endif %} {% if task.created %}
+  <time class="date"> {{task.created}}</time>
+  {% endif %}
 </div>
 
-{%endfor%}
+{%endfor%} {%endblock%}
